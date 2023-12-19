@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./func.js"></script>
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <section>
+
+        <div>
+            <input type="number" id="number" placeholder="Input a number" min="0" autocomplete="off">
+            <br />
+            <select name="" id="select">
+                <option value="" selected disabled>Select between factorial, subfactorial or double-factorial</option>
+
+                <option value="factorial" title="The factorial of n (n!=1*2*3...*n)">n!</option>
+
+                <option value="double-factorial" title="The double-factorial of n (n!!=n*(n-2)*(n-4)*...4*2)">n!!
+                </option>
+
+                <option value="subfactorial" title="The subfactorial of n (!n=(n-1)*(!(n-1) + !(n-2)))">!n</option>
+
+                <option value="Fib" title="The n-th Fibonacci's number (Fib(1)=Fib(2)=1 Fib(n)=Fib(n-1)+Fib(n-2);n≥3)">
+                    Fib(n)</option>
+            </select>
+            <br />
+            <input type="text" readonly class="result" placeholder="Your result will be shown here">
+            <br />
+            <div class="btns">
+                <button>Get Answer</button>
+                <button>Copy</button>
+                <button onclick="location.reload()">Reset Page</button>
+            </div>
+        </div>
+        <div class="generator-box">
+            <input type="number" id="min" placeholder="Enter the min value">
+            <input type="number" id="max" placeholder="Enter the max value">
+            <input type="text" id="generator-result" placeholder="result:">
+            <div class="btns">
+                <button class="generate">Generate a random integer</button>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
