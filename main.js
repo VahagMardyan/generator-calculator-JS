@@ -3,6 +3,7 @@ import subfactorial from './SubFactorial.js';
 import doubleFactorial from './DoubleFactorial.js';
 import Fibonacci from './Fibonacci.js';
 import createMessage from './Message.js';
+import isPrime from './isPrime.js';
 
 const div = document.querySelector('div');
 const select = document.querySelector('select');
@@ -32,6 +33,8 @@ const showAnswer = () => {
             return result.value 
                 = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
             break;
+            case 'isPrime': 
+            return result.value = isPrime(n);
         default:
             result.style.color = '#5f021f';
             return result.value = `Can't get answer: Please select any value.`;
