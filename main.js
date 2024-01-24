@@ -5,8 +5,7 @@ import Fibonacci from './Fibonacci.js';
 import createMessage from './Message.js';
 import isPrime from './isPrime.js';
 
-const div = document.querySelector('div');
-const select = document.querySelector('select');
+const radioButtons = Array.from(document.getElementsByName('value'));
 const result = document.querySelector('.result');
 const show = document.querySelector('button');
 const copy = document.querySelectorAll('button')[1];
@@ -15,29 +14,32 @@ const generatorResult = document.getElementById(`generator-result`);
 
 const showAnswer = () => {
     const n = Number.parseInt(document.getElementById('number').value);
-    switch (select.value) {
-        case 'factorial':
-            result.style.color = 'black';
-            return result.value = ` The ${n}! is: ${factorial(n)}`;
-            break;
-        case 'double-factorial':
-            result.style.color = 'black';
-            return result.value = `The ${n}!! is: ${doubleFactorial(n)}`;
-            break;
-        case 'subfactorial':
-            result.style.color = 'black';
-            return result.value = `The !${n} is: ${subfactorial(n)}`;
-            break;
-        case 'Fib':
-            result.style.color = 'black';
-            return result.value 
-                = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
-            break;
-            case 'isPrime': 
-            return result.value = isPrime(n);
-        default:
-            result.style.color = '#5f021f';
-            return result.value = `Can't get answer: Please select any value.`;
+    const selectedRadio = radioButtons.find(val => val.checked);
+    if(selectedRadio) {
+        switch (selectedRadio.value) {
+                    case 'factorial':
+                        result.style.color = 'black';
+                        return result.value = ` The ${n}! is: ${factorial(n)}`;
+                        break;
+                    case 'double-factorial':
+                        result.style.color = 'black';
+                        return result.value = `The ${n}!! is: ${doubleFactorial(n)}`;
+                        break;
+                    case 'subfactorial':
+                        result.style.color = 'black';
+                        return result.value = `The !${n} is: ${subfactorial(n)}`;
+                        break;
+                    case 'Fib':
+                        result.style.color = 'black';
+                        return result.value
+                            = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
+                        break;
+                    case 'isPrime':
+                        return result.value = isPrime(n);
+                    default:
+                        result.style.color = '#5f021f';
+                        return result.value = `Can't get answer: Please select any value.`;
+                    }
     }
 }
 
@@ -55,10 +57,10 @@ const copyAnswer = () => {
 const generateRandomNum = () => {
     const min = Number(document.getElementById('min').value);
     const max = Number(document.getElementById('max').value);
-    if(!min || !max) {
+    if (!min || !max) {
         generatorResult.style.color = '#5f021f';
         return generatorResult.value
-         = `Can't generate an integer: Min or Max value can't be empty. Input something.`;
+            = `Can't generate an integer: Min or Max value can't be empty. Input something.`;
     }
     if (min >= max) {
         generatorResult.style.color = '#5f021f';
@@ -66,7 +68,7 @@ const generateRandomNum = () => {
     }
     generatorResult.style.color = 'black';
     return generatorResult.value
-         = `The random integer between [${min};${max}] is: ${Math.round(Math.random() * (max - min) + min)}`;
+        = `The random integer between [${min};${max}] is: ${Math.round(Math.random() * (max - min) + min)}`;
 };
 
 show.addEventListener('click', showAnswer);

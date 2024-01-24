@@ -13,20 +13,28 @@
         <div>
             <input type="number" id="number" placeholder="Input a number" min="0" autocomplete="off">
             <br />
-            <select name="" id="select">
-                <option value="" selected disabled>Select between factorial, subfactorial or double-factorial</option>
-
-                <option value="factorial" title="The factorial of n (n!=1*2*3...*n)">n!</option>
-
-                <option value="double-factorial" title="The double-factorial of n (n!!=n*(n-2)*(n-4)*...4*2)">n!!
-                </option>
-
-                <option value="subfactorial" title="The subfactorial of n (!n=(n-1)*(!(n-1) + !(n-2)))">!n</option>
-
-                <option value="Fib" title="The n-th Fibonacci's number (Fib(1)=Fib(2)=1 Fib(n)=Fib(n-1)+Fib(n-2);n≥3)">
-                    Fib(n)</option>
-                <option value="isPrime">Check if n is a Prime Number</option>
-            </select>
+            <fieldset id="select">
+                <div>
+                    <label for="factorial">n!</label>
+                    <input type="radio" name="value" value="factorial" id="factorial" title="n!"/>
+                </div>
+                <div>
+                    <label for="double-factorial">n!!</label>
+                    <input type="radio" name="value" value="double-factorial" id="double-factorial" title="n!!"/>
+                </div>
+                <div>
+                    <label for="subfactorial">!n</label>
+                    <input type="radio" name="value" value="subfactorial" id="subfactorial" title="!n"/>
+                </div>
+                <div>
+                    <label for="Fib">Fib(n)</label>
+                    <input type="radio" name="value" value="Fib" id="Fib" title="Fib(n)"/>
+                </div>
+                <div>
+                    <label for="isPrime">isPrime(n)</label>
+                    <input type="radio" name="value" value="isPrime" id="isPrime" title="isPrime(n)"/>
+                </div>
+            </fieldset>
             <br />
             <input type="text" readonly class="result" placeholder="Your result will be shown here">
             <br />
