@@ -3,6 +3,7 @@
     padding: 0;
     user-select: none;
     text-transform: capitalize;
+    overflow: hidden;
 }
 
 body {
@@ -15,6 +16,63 @@ section {
     margin-block: 15%;
     margin-inline: 10px;
     gap: 10px;
+}
+
+div:not(.btns,fieldset>div) {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: #020860;
+}
+
+input {
+    height: 27px;
+    background-color: #05366e;
+    font-size: 1.2em;
+    border: 1px solid black;
+}
+
+input::placeholder {
+    color: black;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 1px solid black;
+    background-color: #05366e;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+input[type='radio'] {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.btns {
+    display: flex;
+}
+
+button {
+    cursor: pointer;
+    height: 30px;
+    width: 50%;
+    font-size: 1.2em;
+    background-color: #090980;
+    border: 1px solid black;
+    text-align: balance;
+}
+
+.generator-box {
+    grid-gap: 11%;
 }
 
 .message-box {
@@ -31,66 +89,6 @@ section {
 .disappear {
     animation-name: disappearing-message;
     animation-duration: 4s;
-}
-
-#select {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-label {
-    /* color: rgb(183, 174, 174); */
-    font-size: 1.5em;
-}
-
-input[type='radio'] {
-    width: 40px;
-    height: 20px;
-    cursor: pointer;
-    border: 1px solid black;
-    /* font-size: 1.2em; */
-    background-color: red;
-}
-
-fieldset {
-    border: 1px solid black;
-    background-color: #05366e;
-}
-
-div:not(.btns,fieldset>div) {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: #020860;
-}
-
-.btns {
-    display: flex;
-}
-
-input {
-    height: 27px;
-    background-color: #05366e;
-    font-size: 1.2em;
-    border: 1px solid black;
-}
-
-input::placeholder {
-    color: black;
-}
-
-button {
-    cursor: pointer;
-    height: 30px;
-    width: 50%;
-    font-size: 1.2em;
-    background-color: #090980;
-    border: 1px solid black;
-}
-
-.generator-box {
-    grid-gap: 11%;
 }
 
 @keyframes disappearing-message {
