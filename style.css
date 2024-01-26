@@ -3,7 +3,6 @@
     padding: 0;
     user-select: none;
     text-transform: capitalize;
-    overflow: hidden;
 }
 
 body {
@@ -18,7 +17,7 @@ section {
     gap: 10px;
 }
 
-div:not(.btns,fieldset>div) {
+div:not(.btns, fieldset>div) {
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -98,5 +97,57 @@ button {
 
     to {
         opacity: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    section {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-block: 10%;
+        gap: 10px;
+    }
+
+    div:not(.btns, fieldset>div) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        background-color: #020860;
+    }
+
+    input {
+        width: 100%;
+        height: 27px;
+        background-color: #05366e;
+        font-size: 1.2em;
+        border: 1px solid black;
+    }
+
+    input::placeholder {
+        color: black;
+    }
+
+    fieldset {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        border: 1px solid black;
+        background-color: #05366e;
+    }
+
+    label {
+        font-size: 1.5em;
+    }
+
+    input[type='radio'] {
+        width: 40px;
+        height: 20px;
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: red;
     }
 }
