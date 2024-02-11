@@ -15,31 +15,27 @@ const generatorResult = document.getElementById(`generator-result`);
 const showAnswer = () => {
     const n = Number.parseInt(document.getElementById('number').value);
     const selectedRadio = radioButtons.find(val => val.checked);
-    if(selectedRadio) {
+    if (selectedRadio) {
         switch (selectedRadio.value) {
-                    case 'factorial':
-                        result.style.color = 'black';
-                        return result.value = ` The ${n}! is: ${factorial(n)}`;
-                        break;
-                    case 'double-factorial':
-                        result.style.color = 'black';
-                        return result.value = `The ${n}!! is: ${doubleFactorial(n)}`;
-                        break;
-                    case 'subfactorial':
-                        result.style.color = 'black';
-                        return result.value = `The !${n} is: ${subfactorial(n)}`;
-                        break;
-                    case 'Fib':
-                        result.style.color = 'black';
-                        return result.value
-                            = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
-                        break;
-                    case 'isPrime':
-                        return result.value = isPrime(n);
-                    default:
-                        result.style.color = '#5f021f';
-                        return result.value = `Can't get answer: Please select any value.`;
-                    }
+            case 'factorial':
+                result.style.color = 'black';
+                return result.value = ` The ${n}! is: ${factorial(n)}`;
+            case 'double-factorial':
+                result.style.color = 'black';
+                return result.value = `The ${n}!! is: ${doubleFactorial(n)}`;
+            case 'subfactorial':
+                result.style.color = 'black';
+                return result.value = `The !${n} is: ${subfactorial(n)}`;
+            case 'Fib':
+                result.style.color = 'black';
+                return result.value
+                    = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
+            case 'isPrime':
+                return result.value = isPrime(n);
+            default:
+                result.style.color = '#5f021f';
+                return result.value = `Can't get answer: Please select any value.`;
+        }
     }
 }
 
@@ -48,7 +44,7 @@ const copyAnswer = () => {
     if (copiedValue.value) {
         copiedValue.select();
         document.execCommand('copy');
-        createMessage('The answer copied to clipboard.');
+        return createMessage('The answer copied to clipboard.');
     } else {
         return createMessage(`There's nothing to copy.`);
     }
