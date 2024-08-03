@@ -5,7 +5,7 @@ import Fibonacci from './Fibonacci.js';
 import createMessage from './Message.js';
 import isPrime from './isPrime.js';
 
-for(let name of Object.getOwnPropertyNames(Math)) {
+for(const name of Object.getOwnPropertyNames(Math)) {
     globalThis[name] = Math[name];
 }
 
