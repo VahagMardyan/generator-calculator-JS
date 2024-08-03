@@ -5,6 +5,10 @@ import Fibonacci from './Fibonacci.js';
 import createMessage from './Message.js';
 import isPrime from './isPrime.js';
 
+for(let name of Object.getOwnPropertyNames(Math)) {
+    globalThis[name] = Math[name];
+}
+
 const radioButtons = Array.from(document.getElementsByName('value'));
 const result = document.querySelector('.result');
 const show = document.querySelector('button');
