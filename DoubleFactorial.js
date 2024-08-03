@@ -1,13 +1,15 @@
-const doubleFactorial = (n, memo = {}) => {
-    if (n === 0 || n === 1) {
-        return 1;
+const doubleFactorial = (n) => {
+    if(n < 0n) {
+        return -1n;
     }
-    if (memo[n]) {
-        return memo[n];
+    if(n === 0n || n === 1n) {
+        return 1n;
     }
-    memo[n] = n * doubleFactorial(n - 2, memo);
-    console.log(memo);
-    return memo[n];
+    const table = Array(Number(n) + 1).fill(1n);
+    for(let i = 2n; i <= n; i++) {
+        table[Number(i)] = i * table[Number(i - 2n)];
+    }
+    return table[Number(n)];
 }
 
 export default doubleFactorial;

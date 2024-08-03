@@ -1,12 +1,15 @@
-const factorial = (n, memo = {}) => {
-    if (n === 0 || n === 1) {
-        return 1;
+const factorial = (n) => {
+    if(n < 0n) {
+        return -1n;
     }
-    if (n in memo) {
-        return memo[n];
+    if(n === 0n || n === 1n) {
+        return 1n;
     }
-    memo[n] = n * factorial(n - 1, memo);
-    return memo[n];
+    const table = [1n];
+    for(let i = 1n;i <= n; i++) {
+        table.push(i * table[i-1n]);
+    }
+    return table[n];
 }
 
 export default factorial;

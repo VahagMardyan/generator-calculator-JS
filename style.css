@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     user-select: none;
-    text-transform: capitalize;
 }
 
 body {
@@ -32,8 +31,15 @@ input {
     border: 1px solid black;
 }
 
-input::placeholder {
+input::placeholder,textarea::placeholder {
     color: black;
+}
+
+textarea {
+    background-color: #05366e;
+    font-size: 1.2em;
+    border: 1px solid black;
+    resize: none;
 }
 
 fieldset {
@@ -73,6 +79,16 @@ button {
 .generator-box {
     grid-gap: 11%;
 }
+
+footer {
+    border: 1px solid black;
+}
+
+footer > p{
+    color: #717171;
+}
+
+/* Animation */
 
 .message-box {
     width: 30%;

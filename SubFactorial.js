@@ -1,15 +1,18 @@
-const subfactorial = (n, memo = {}) => {
-    if (n === 0) {
-        return 1;
+const subfactorial = (n) => {
+    if(n < 0n) {
+        return -1n;
     }
-    if (n === 1) {
-        return 0;
+    if(n === 0n) {
+        return 1n;
     }
-    if (memo[n]) {
-        return memo[n];
+    if(n === 1n) {
+        return 0n;
     }
-    memo[n] = (n - 1) * (subfactorial(n - 1, memo) + subfactorial(n - 2, memo));
-    return memo[n];
+    const table = [1n, 0n, ...Array(Number(n) - 1).fill(0n)];
+    for(let i = 2n; i <= n; i++) {
+        table[Number(i)] = (i - 1n) * ( table[Number(i - 1n)] + table[Number(i - 2n)] );
+    }
+    return table[Number(n)];
 }
 
 export default subfactorial;

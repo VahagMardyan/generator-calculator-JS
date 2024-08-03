@@ -1,12 +1,12 @@
-const Fibonacci = (n, memo = {}) => {
-    if (n <= 2) {
-        return 1;
+const Fibonacci = (n) => {
+    if(n < 0n) {
+        return -1n;
     }
-    if (memo[n]) {
-        return memo[n];
+    const table = [0n,1n];
+    for(let i = 2n;i <= n; i++) {
+        table.push(table[i-1n] + table[i-2n]);
     }
-    memo[n] = Fibonacci(n - 1, memo) + Fibonacci(n - 2, memo);
-    return memo[n];
+    return table[n];
 }
 
 export default Fibonacci;

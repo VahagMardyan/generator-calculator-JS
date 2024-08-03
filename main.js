@@ -13,28 +13,30 @@ const generate = document.querySelectorAll('button')[3];
 const generatorResult = document.getElementById(`generator-result`);
 
 const showAnswer = () => {
-    const n = Number.parseInt(document.getElementById('number').value);
+    const value = document.getElementById('user-input').value;
     const selectedRadio = radioButtons.find(val => val.checked);
     if (selectedRadio) {
         switch (selectedRadio.value) {
             case 'factorial':
                 result.style.color = 'black';
-                return result.value = ` The ${n}! is: ${factorial(n)}`;
+                return result.value = `The ${value}! is: ${factorial(value)}.`;
             case 'double-factorial':
                 result.style.color = 'black';
-                return result.value = `The ${n}!! is: ${doubleFactorial(n)}`;
+                return result.value = `The ${value}!! is: ${doubleFactorial(value)}.`;
             case 'subfactorial':
                 result.style.color = 'black';
-                return result.value = `The !${n} is: ${subfactorial(n)}`;
+                return result.value = `The !${value} is: ${subfactorial(value)}.`;
             case 'Fib':
                 result.style.color = 'black';
                 return result.value
-                    = `The ${n}${n === 1 ? 'st' : n == 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(n)}`;
+                    = `The ${value}${value === 1 ? 'st' : value === 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(value)}.`;
             case 'isPrime':
-                return result.value = isPrime(n);
+                return result.value = isPrime(value);
+            case 'calculator':
+                return result.value = eval(value);
             default:
                 result.style.color = '#5f021f';
-                return result.value = `Can't get answer: Please select any value.`;
+                return result.value = `Unable to get the answer: Please select any value.`;
         }
     }
 }
