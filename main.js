@@ -83,3 +83,5 @@ document.addEventListener('keyup', (event) => {
                 event.altKey && event.key === 'm' ? document.getElementById(`min`).focus() : null;
 });
 generate.addEventListener('click', generateRandomNum);
+
+console.log(log(5));

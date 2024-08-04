@@ -76,6 +76,11 @@ button {
     text-align: balance;
 }
 
+.link {
+    text-decoration: underline;
+    color: #717171;
+}
+
 .generator-box {
     grid-gap: 11%;
 }

@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    border: 1px solid black;
+}
+
+footer > a,p {
+    color: #717171;
+}
