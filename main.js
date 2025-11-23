@@ -4,6 +4,7 @@ import doubleFactorial from './DoubleFactorial.js';
 import Fibonacci from './Fibonacci.js';
 import createMessage from './Message.js';
 import isPrime from './isPrime.js';
+import isFibonacciNum from "./IsFibonacciNumber.js";
 
 for(const name of Object.getOwnPropertyNames(Math)) {
     globalThis[name] = Math[name];
@@ -34,6 +35,9 @@ const showAnswer = () => {
                 result.style.color = 'black';
                 return result.value
                     = `The ${value}${value === 1 ? 'st' : value === 2 ? 'nd' : 'th'} Fibonacci's number is : ${Fibonacci(value)}.`;
+            case 'IsFib':
+                result.style.color = 'black';
+                return result.value = isFibonacciNum(value);
             case 'isPrime':
                 return result.value = isPrime(value);
             case 'calculator':
@@ -77,11 +81,10 @@ show.addEventListener('click', showAnswer);
 copy.addEventListener('click', copyAnswer);
 document.addEventListener('keyup', (event) => {
     event.key === 'Enter' ? showAnswer() : null;
-    event.altKey && event.key === 'r' ? document.getElementById('number').focus() :
+    event.altKey && event.key === 'Enter' ? document.getElementById('user-input').focus() :
         event.altKey && event.key === 'c' ? copyAnswer() :
             event.altKey && event.key === 'g' ? generateRandomNum() :
                 event.altKey && event.key === 'm' ? document.getElementById(`min`).focus() : null;
 });
 generate.addEventListener('click', generateRandomNum);
 
-console.log(log(5));
